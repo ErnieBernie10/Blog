@@ -5,9 +5,11 @@ import type { AppProps } from 'next/app';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <main className="container mx-auto flex">
-      <Component {...pageProps} />
-    </main>
+    <div className="font-serif">
+      <main className="container mx-auto ">
+        <Component {...pageProps} />
+      </main>
+    </div>
   );
 };
 

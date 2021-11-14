@@ -11,7 +11,7 @@ interface GetPostsData {
 export const getPosts = async () => {
   return supabase
     .from<GetPostsData>(constants.POSTS)
-    .select('slug, title, created_at, updated_at');
+    .select('slug, title, created_at, updated_at, preview_image, description');
 };
 
 export const getPostForSlug = async (slug: string) => {

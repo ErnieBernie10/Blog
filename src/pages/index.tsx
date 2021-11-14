@@ -1,18 +1,22 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
 
 import { getPosts } from '../api/getPosts';
 import { definitions } from '../api/models/supabase';
+import { PreviewCard } from '../components/PreviewCard';
 
 const Home: NextPage<{ posts: Array<definitions['posts']> }> = ({ posts }) => (
-  <main>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-2">
     {posts.map((p, i) => (
-      <div key={i}>
-        <h3>{p.title}</h3>
-        <Link href={`/blog/${p.slug}`}>Read more</Link>
-      </div>
+      <PreviewCard
+        title={p.title}
+        description={p.description}
+        imgSrc={p.preview_image ?? ''}
+        imgAlt={p.title}
+        to={`/blog/${p.slug}`}
+        key={i}
+      />
     ))}
-  </main>
+  </div>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
