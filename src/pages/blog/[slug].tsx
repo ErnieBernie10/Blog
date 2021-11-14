@@ -1,9 +1,11 @@
+import React from 'react';
+
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import ReactMarkdown from 'react-markdown';
 
 import { getPostForSlug, getPosts } from '../../api/getPosts';
 import { Post } from '../../api/models/models';
+import { StyledReactMarkdown } from '../../components/StyledReactMarkdown';
 
 const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const router = useRouter();
@@ -11,9 +13,11 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
     return <>Loading...</>;
   }
   return (
-    <article className="container mx-auto">
-      <h2 className="text-purple-600">{post.title}</h2>
-      {post.content && <ReactMarkdown>{post.content}</ReactMarkdown>}
+    <article className="container mx-auto lg:w-8/12 xl:w-7/12 md:w-full">
+      <h1 className="text-5xl text-red-900">{post.title}</h1>
+      {post.content && (
+        <StyledReactMarkdown>{post.content}</StyledReactMarkdown>
+      )}
     </article>
   );
 };
