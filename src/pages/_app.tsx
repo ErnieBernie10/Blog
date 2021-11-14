@@ -1,9 +1,14 @@
-import { AppProps } from 'next/app';
+import React from 'react';
 
-import '../styles/main.css';
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Component {...pageProps} />
-);
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <main className="container mx-auto flex">
+      <Component {...pageProps} />
+    </main>
+  );
+};
 
-export default MyApp;
+export default App;
