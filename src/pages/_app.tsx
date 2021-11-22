@@ -1,18 +1,16 @@
 import React from 'react';
 
 import '../styles/globals.css';
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-
-import { Navbar } from '../components/Navbar';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <div className="font-serif">
-      <Navbar />
-      <main className="container mx-auto ">
+    <ThemeProvider attribute="class">
+      <div className="font-serif text-gray-900 dark:text-white dark:bg-gray-900">
         <Component {...pageProps} />
-      </main>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 };
 

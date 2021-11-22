@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import { getPostForSlug, getPosts } from '../../api/getPosts';
 import { Post } from '../../api/models/models';
+import { NavbarLayout } from '../../components/NavbarLayout';
 import { StyledReactMarkdown } from '../../components/StyledReactMarkdown';
 
 const PostPage: NextPage<{ post: Post }> = ({ post }) => {
@@ -13,12 +14,14 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
     return <>Loading...</>;
   }
   return (
-    <article className="container mx-auto lg:w-8/12 xl:w-7/12 md:w-full">
-      <h1 className="text-5xl text-red-900">{post.title}</h1>
-      {post.content && (
-        <StyledReactMarkdown>{post.content}</StyledReactMarkdown>
-      )}
-    </article>
+    <NavbarLayout>
+      <article className="container mx-auto lg:w-8/12 xl:w-7/12 md:w-full">
+        <h1 className="text-5xl text-red-900">{post.title}</h1>
+        {post.content && (
+          <StyledReactMarkdown>{post.content}</StyledReactMarkdown>
+        )}
+      </article>
+    </NavbarLayout>
   );
 };
 
