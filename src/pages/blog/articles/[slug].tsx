@@ -3,10 +3,10 @@ import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-import { getPostForSlug, getPosts } from '../../api/getPosts';
-import { Post } from '../../api/models/models';
-import { NavbarLayout } from '../../components/NavbarLayout';
-import { StyledReactMarkdown } from '../../components/StyledReactMarkdown';
+import { getPostForSlug, getPosts } from '../../../api/getPosts';
+import { Post } from '../../../api/models/models';
+import { NavbarLayout } from '../../../components/NavbarLayout';
+import { StyledReactMarkdown } from '../../../components/StyledReactMarkdown';
 
 const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   const router = useRouter();
@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const { data: allPosts } = await getPosts();
   return {
-    paths: allPosts?.map((post) => `/blog/${post.slug}`) || [],
+    paths: allPosts?.map((post) => `/blog/articles/${post.slug}`) || [],
     fallback: true,
   };
 };
