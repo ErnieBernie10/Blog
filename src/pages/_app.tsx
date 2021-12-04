@@ -11,7 +11,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
   return (
     <ThemeProvider attribute="class">
-      <div className="font-serif text-gray-900 dark:text-white">
+      <div className="font-serif text-gray-900 dark:text-white h-[100vh]">
         <Component {...pageProps} />
       </div>
     </ThemeProvider>

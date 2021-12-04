@@ -1,0 +1,19 @@
+
+.navbarLayoutAnimation {
+    opacity: 0;
+    animation-name: rise-up;
+    animation-delay: .2s;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes rise-up {
+    from {
+        opacity: 0;
+        transform: translateY(20vh);
+    }
+    to {
+        opacity: 1;
+        transform : translateY(0);
+    }
+}

@@ -1,12 +1,32 @@
 import React from 'react';
 
+import clsx from 'clsx';
+
+import styles from '../styles/NavbarLayout.module.css';
 import { Navbar } from './Navbar';
 
-export const NavbarLayout: React.FC = ({ children }) => {
+interface NavbarLayoutProps {
+  fullWidth?: boolean;
+  className?: string;
+}
+export const NavbarLayout: React.FC<NavbarLayoutProps> = ({
+  children,
+  fullWidth = false,
+  className,
+}) => {
   return (
     <>
       <Navbar />
-      <main className="container mx-auto pt-20">{children}</main>
+      <main
+        className={clsx(
+          fullWidth ? 'w-full' : 'container',
+          'mx-auto pt-20',
+          className,
+          styles.navbarLayoutAnimation
+        )}
+      >
+        {children}
+      </main>
     </>
   );
 };

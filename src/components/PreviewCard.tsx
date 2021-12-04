@@ -32,7 +32,7 @@ export const PreviewCard: React.FC<PreviewCardProps> = ({
           </a>
         </Link>
       </div>
-      <div className="w-full text-left p-6 md:p-4 space-y-2">
+      <div className="w-full text-left p-6 md:p-2">
         <Link href={to}>
           <a>
             <h3 className="text-xl text-red-900 dark:text-gray-100 font-bold hover:cursor-pointer">
@@ -40,10 +40,14 @@ export const PreviewCard: React.FC<PreviewCardProps> = ({
             </h3>
           </a>
         </Link>
-        {subTitle && <h4 className="text-base font-normal">{subTitle}</h4>}
-        <p className="text-base leading-relaxed font-normal">{description}</p>
+        <div className="mb-10">
+          {subTitle && <h4 className="text-base font-normal">{subTitle}</h4>}
+          <p className="text-base leading-relaxed font-normal">{description}</p>
+        </div>
         <div className="absolute bottom-4 right-4 hover:text-red-900 hover:underline">
-          <Link href={to}>Learn more...</Link>
+          <Link href={to}>
+            <a>Learn more...</a>
+          </Link>
         </div>
       </div>
     </div>
