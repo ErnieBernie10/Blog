@@ -6,6 +6,7 @@ import { getPosts } from '../api/getPosts';
 import { definitions } from '../api/models/supabase';
 import { NavbarLayout } from '../components/NavbarLayout';
 import { PreviewCard } from '../components/PreviewCard';
+import { toDisplayDate } from '../util/dateUtil';
 
 const Blog: NextPage<{ posts: Array<definitions['posts']> }> = ({ posts }) => {
   return (
@@ -18,6 +19,7 @@ const Blog: NextPage<{ posts: Array<definitions['posts']> }> = ({ posts }) => {
             imgSrc={p.preview_image ?? ''}
             imgAlt={p.title}
             to={`/blog/articles/${p.slug}`}
+            date={toDisplayDate(p.created_at ?? '')}
             key={i}
           />
         ))}

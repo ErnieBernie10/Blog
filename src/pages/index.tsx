@@ -25,29 +25,32 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="container mx-auto w-[800px] grid grid-cols-3 grid-rows-2 gap-4 h-full">
+    <div className="container mx-auto md:lg:w-[800px] grid sm:md:lg:grid-cols-3 sm:md:lg:grid-rows-2 sm:md:lg:gap-4 grid-cols-1 grid-rows-2 p-2 h-full">
       <div
-        className="self-end col-span-2 pb-4"
+        className="self-end col-span-2 pb-1"
         onMouseOver={handleHover}
         onMouseOut={unlockHover}
       >
         <h1 className="text-6xl text-right">Arne Boedt</h1>
-        <h2 className="text-2xl text-right dark:text-gray-400 text-gray-700">
+        <h2 className="text-2xl text-right dark:text-gray-400 text-gray-700 dark:text-red-200 text-red-800">
           Fullstack Software Developer
         </h2>
+        <span className="text-right block text-gray-500">
+          <a href="mailto:arneboedt1@gmail.com">arneboedt1@gmail.com</a>
+        </span>
       </div>
-      <nav className="self-end border-l-2 pl-4 pt-3 dark:border-gray-200 border-gray-500">
+      <nav className="self-start sm:md:lg:self-end sm:md:lg:text-left text-right md:lg:border-l-2 md:lg:border-t-0 border-t-2 pl-4 pt-5 pb-2 dark:border-gray-200 border-gray-500">
         <ul className="text-lg lg:flex-grow h-full flex flex-col">
           <li>
             <Link href="/blog?m=true">
-              <a className="block lg:inline-block text-teal-lighter mr-4 hover:text-black dark:hover:text-gray-400 hover:underline">
+              <a className="block sm:md:lg:inline-block text-teal-lighter sm:md:lg:mr-4 hover:text-black dark:hover:text-gray-400 hover:underline">
                 Blog
               </a>
             </Link>
           </li>
           <li>
             <Link href="/blog/erasmus?m=true">
-              <a className="block mt-4 lg:inline-block text-teal-lighter mr-4 mt-4 hover:text-black dark:hover:text-gray-400 hover:underline">
+              <a className="block mt-4 lg:inline-block text-teal-lighter sm:md:lg:mr-4 mt-2 hover:text-black dark:hover:text-gray-400 hover:underline">
                 Erasmus
               </a>
             </Link>
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
           {/*  </Link> */}
           {/* </li> */}
         </ul>
-        <ul className="flex">
+        <ul className="flex sm:md:lg:justify-start justify-end">
           <li>
             <a
               href="https://github.com/ErnieBernie10"

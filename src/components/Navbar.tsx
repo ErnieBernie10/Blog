@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
         <Link href="/">
           <a>
             <div className="flex items-center flex-no-shrink mr-6">
-              <span className="font-semibold text-3xl tracking-tight">
+              <span className="font-semibold text-3xl dark:text-red-200 text-red-800">
                 Arne Boedt
               </span>
             </div>
@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
               </Link>
             </li>
           </ul>
-          <ThemeToggle className="float-right lg:mt-0 sm:-mt-10" />
+          <ThemeToggle className="float-right -mt-7 sm:md:lg:m-0" />
         </div>
       </nav>
     </div>

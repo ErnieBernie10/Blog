@@ -15,8 +15,10 @@ const PostPage: NextPage<{ post: Post }> = ({ post }) => {
   }
   return (
     <NavbarLayout>
-      <article className="container mx-auto lg:w-8/12 xl:w-7/12 md:w-full">
-        <h1 className="text-5xl text-red-900">{post.title}</h1>
+      <article className="container sm:lg:md:xl:mx-auto lg:w-8/12 xl:w-7/12 md:w-full p-2">
+        <h1 className="text-5xl text-red-900 dark:text-red-200">
+          {post.title}
+        </h1>
         {post.content && (
           <StyledReactMarkdown>{post.content}</StyledReactMarkdown>
         )}
