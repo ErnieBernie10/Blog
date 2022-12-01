@@ -24,10 +24,10 @@ export const Navbar: React.FC = () => {
         shouldPlayAnimation ? styles.navAnimation : ''
       )}
     >
-      <nav className="flex items-center justify-between flex-wrap bg-teal p-2 pl-4 m-2 shadow-md rounded-md dark:bg-gray-800 bg-white">
+      <nav className="flex items-center justify-between flex-wrap bg-teal p-2 pl-4 m-2 shadow-md rounded-md dark:bg-gray-800 bg-gray-50">
         <Link href="/">
           <div className="flex items-center flex-no-shrink mr-6">
-            <span className="font-semibold text-3xl dark:text-red-200 text-red-800">
+            <span className="font-semibold light:text-gray-800 dark:text-gray-100 text-3xl">
               Arne Boedt
             </span>
           </div>
@@ -57,7 +57,12 @@ export const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/blog"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4 "
+                className={clsx(
+                  'block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4',
+                  router.pathname === '/blog'
+                    ? 'dark:text-red-200 text-red-800 font-bold'
+                    : ''
+                )}
                 onClick={handleHamburgerClick}
               >
                 Blog
@@ -66,7 +71,12 @@ export const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/blog/erasmus"
-                className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4"
+                className={clsx(
+                  'block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4',
+                  router.asPath === '/blog/erasmus/'
+                    ? 'dark:text-red-200 text-red-800 font-bold'
+                    : ''
+                )}
                 onClick={handleHamburgerClick}
               >
                 Erasmus

@@ -22,7 +22,7 @@ export const PreviewCard: React.FC<PreviewCardProps> = ({
   date,
 }) => {
   return (
-    <div className="relative w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl overflow-hidden flex flex-col xl:flex-row hover:scale-[102%] transition-all duration-100">
+    <div className="relative w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl overflow-hidden flex flex-col xl:flex-row hover:scale-[102%] transition-all duration-100">
       <div className="w-full h-80 bg-white">
         <Link href={to}>
           <img
@@ -41,18 +41,18 @@ export const PreviewCard: React.FC<PreviewCardProps> = ({
         </Link>
         <div className="mb-10">
           {subTitle && <h4 className="text-base font-normal">{subTitle}</h4>}
-          <p className="text-base leading-relaxed font-normal text-justify mt-2">
+          <p className="text-md leading-relaxed font-normal text-justify mt-2">
             {description}
           </p>
         </div>
         <div className="absolute bottom-1 right-2 w-full pl-7 m-2 xl:w-[51%]">
           <div className="flex justify-between w-full">
-            <div className="italic text-gray-600">{date}</div>
+            <div className="text-sm italic text-gray-600">{date}</div>
             <Link
               href={to}
-              className="hover:text-red-800 dark:hover:text-red-400 hover:underline dark:text-red-200 font-bold"
+              className="hover:text-red-800 dark:hover:text-red-400 transition-all ease-in-out duration-100 hover:underline font-bold hover:translate-x-2 hover:before:content-['>>']"
             >
-              Read
+              Read...
             </Link>
           </div>
         </div>
