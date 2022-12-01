@@ -2,13 +2,12 @@ import React from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
 
-import { getPosts } from '../api/getPosts';
-import { definitions } from '../api/models/supabase';
+import { getPosts, Post } from '../api/getPosts';
 import { NavbarLayout } from '../components/NavbarLayout';
 import { PreviewCard } from '../components/PreviewCard';
 import { toDisplayDate } from '../util/dateUtil';
 
-const Blog: NextPage<{ posts: Array<definitions['posts']> }> = ({ posts }) => {
+const Blog: NextPage<{ posts: Array<Post> }> = ({ posts }) => {
   return (
     <NavbarLayout>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-2">

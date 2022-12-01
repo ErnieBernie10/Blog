@@ -42,17 +42,19 @@ const Home: NextPage = () => {
       <nav className="self-start sm:md:lg:self-end sm:md:lg:text-left text-right md:lg:border-l-2 md:lg:border-t-0 border-t-2 pl-4 pt-5 pb-2 dark:border-gray-200 border-gray-500">
         <ul className="text-lg lg:flex-grow h-full flex flex-col">
           <li>
-            <Link href="/blog?m=true">
-              <a className="block sm:md:lg:inline-block text-teal-lighter sm:md:lg:mr-4 hover:text-black dark:hover:text-gray-400 hover:underline">
-                Blog
-              </a>
+            <Link
+              href="/blog?m=true"
+              className="block sm:md:lg:inline-block text-teal-lighter sm:md:lg:mr-4 hover:text-black dark:hover:text-gray-400 hover:underline"
+            >
+              Blog
             </Link>
           </li>
           <li>
-            <Link href="/blog/erasmus?m=true">
-              <a className="block mt-4 lg:inline-block text-teal-lighter sm:md:lg:mr-4 mt-2 hover:text-black dark:hover:text-gray-400 hover:underline">
-                Erasmus
-              </a>
+            <Link
+              href="/blog/erasmus?m=true"
+              className="block mt-4 lg:inline-block text-teal-lighter sm:md:lg:mr-4 mt-2 hover:text-black dark:hover:text-gray-400 hover:underline"
+            >
+              Erasmus
             </Link>
           </li>
           {/* <li> */}

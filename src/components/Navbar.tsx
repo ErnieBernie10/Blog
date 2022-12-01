@@ -26,13 +26,11 @@ export const Navbar: React.FC = () => {
     >
       <nav className="flex items-center justify-between flex-wrap bg-teal p-2 pl-4 m-2 shadow-md rounded-md dark:bg-gray-800 bg-white">
         <Link href="/">
-          <a>
-            <div className="flex items-center flex-no-shrink mr-6">
-              <span className="font-semibold text-3xl dark:text-red-200 text-red-800">
-                Arne Boedt
-              </span>
-            </div>
-          </a>
+          <div className="flex items-center flex-no-shrink mr-6">
+            <span className="font-semibold text-3xl dark:text-red-200 text-red-800">
+              Arne Boedt
+            </span>
+          </div>
         </Link>
         <div className="block">
           <button
@@ -57,23 +55,21 @@ export const Navbar: React.FC = () => {
         >
           <ul className="lg:flex text-lg lg:flex-grow">
             <li>
-              <Link href="/blog">
-                <a
-                  className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4 "
-                  onClick={handleHamburgerClick}
-                >
-                  Blog
-                </a>
+              <Link
+                href="/blog"
+                className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4 "
+                onClick={handleHamburgerClick}
+              >
+                Blog
               </Link>
             </li>
             <li>
-              <Link href="/blog/erasmus">
-                <a
-                  className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4"
-                  onClick={handleHamburgerClick}
-                >
-                  Erasmus
-                </a>
+              <Link
+                href="/blog/erasmus"
+                className="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter mr-4"
+                onClick={handleHamburgerClick}
+              >
+                Erasmus
               </Link>
             </li>
           </ul>

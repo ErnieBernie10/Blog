@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import clsx from 'clsx';
 
@@ -9,7 +9,7 @@ interface NavbarLayoutProps {
   fullWidth?: boolean;
   className?: string;
 }
-export const NavbarLayout: React.FC<NavbarLayoutProps> = ({
+export const NavbarLayout: React.FC<PropsWithChildren<NavbarLayoutProps>> = ({
   children,
   fullWidth = false,
   className,
