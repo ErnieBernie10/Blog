@@ -1,10 +1,21 @@
 {
+  "plugins": [
+    [
+      "formatjs",
+      {
+        "idInterpolationPattern": "[sha512:contenthash:base64:6]",
+        "ast": true
+      }
+    ]
+  ],
   "presets": [
     [
       "next/babel",
       {
         "styled-jsx": {
-          "plugins": ["styled-jsx-plugin-postcss"]
+          "plugins": [
+            "styled-jsx-plugin-postcss"
+          ]
         }
       }
     ]

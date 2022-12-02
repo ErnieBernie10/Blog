@@ -11,7 +11,10 @@
     "clean": "rimraf .next out",
     "lint": "next lint",
     "build-types": "tsc --noEmit --pretty",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "extract:i18n": "formatjs extract 'src/{pages,components,sections}/**/*.{js,ts,tsx}' --format simple --id-interpolation-pattern '[sha512:contenthash:base64:6]' --out-file content/locales/en.json",
+    "compile:i18n": "formatjs compile-folder --ast --format simple content/locales content/compiled-locales",
+    "i18n": "npm run extract:i18n && npm run compile:i18n"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -24,16 +27,19 @@
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intl": "^6.2.4",
     "react-markdown": "^8.0.3",
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {
+    "@formatjs/cli": "^5.1.6",
     "@next/bundle-analyzer": "^13.0.5",
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.25",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.13",
+    "babel-plugin-formatjs": "^10.3.32",
     "cross-env": "^7.0.3",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -46,6 +52,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "formatjs": "^0.1.1",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.4",
     "npm-run-all": "^4.1.5",
