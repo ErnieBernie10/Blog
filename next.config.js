@@ -12,7 +12,7 @@ module.exports = withBundleAnalyzer({
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
   i18n: {
-    locales: ['en-US', 'nl-BE'],
+    locales: ['en-US', 'nl'],
     defaultLocale: 'en-US',
   },
 });

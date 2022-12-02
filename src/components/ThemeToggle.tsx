@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 
+import { ActionButton } from './common/ActionButton';
+
 export const ThemeToggle: React.FC<{
   className?: string;
-  noBackground?: boolean;
   size?: 'lg' | 'sm';
-}> = ({ className, noBackground = false, size = 'sm' }) => {
+}> = ({ className, size = 'sm' }) => {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -23,16 +24,7 @@ export const ThemeToggle: React.FC<{
 
   return (
     <div>
-      <button
-        onClick={switchTheme}
-        className={clsx(
-          className,
-          'flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100',
-          noBackground
-            ? 'bg-transparent'
-            : 'border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-800 dark:text-gray-200 dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50'
-        )}
-      >
+      <ActionButton onClick={switchTheme} className={className}>
         {theme === 'light' ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +51,7 @@ export const ThemeToggle: React.FC<{
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
           </svg>
         )}
-      </button>
+      </ActionButton>
     </div>
   );
 };

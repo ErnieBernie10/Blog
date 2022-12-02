@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Flag from 'react-flagkit';
 
 import styles from '../styles/Nav.module.css';
+import { ActionButton } from './common/ActionButton';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
@@ -50,7 +52,7 @@ export const Navbar: React.FC = () => {
         <div
           className={clsx(
             'w-full flex-grow lg:flex lg:h-full lg:items-center lg:w-auto transition-all duration-300 overflow-hidden ease-in-out',
-            showMenu ? 'h-24' : 'h-0'
+            showMenu ? 'h-32' : 'h-0'
           )}
         >
           <ul className="lg:flex text-lg lg:flex-grow">
@@ -83,7 +85,18 @@ export const Navbar: React.FC = () => {
               </Link>
             </li>
           </ul>
-          <ThemeToggle className="float-right -mt-7 sm:md:lg:m-0" />
+          <div className="flex max-lg:justify-between justify-end w-full">
+            <Link
+              className="block"
+              href={router.basePath}
+              locale={router.locale === 'nl' ? false : 'nl'}
+            >
+              <ActionButton>
+                <Flag country={router.locale === 'nl' ? 'GB' : 'BE'} />
+              </ActionButton>
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
     </div>

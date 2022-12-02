@@ -48,7 +48,7 @@ export const PreviewCard: React.FC<PreviewCardProps> = ({
       <div className="absolute bottom-1 right-2 w-full pl-7 m-2 xl:w-[51%]">
         <div className="flex justify-between w-full">
           <div className="text-sm italic text-gray-600">
-            <FormattedDate value={date} />
+            <FormattedDate value={date} dateStyle="long" />
           </div>
           <Link
             href={to}

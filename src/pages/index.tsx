@@ -80,7 +80,7 @@ const Home: NextPage = () => {
             </a>
           </li>
           <li className="flex flex-col justify-center">
-            <ThemeToggle noBackground className="-ml-3" size="lg" />
+            <ThemeToggle className="-ml-3" size="lg" />
           </li>
         </ul>
       </nav>
