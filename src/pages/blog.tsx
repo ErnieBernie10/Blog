@@ -2,16 +2,16 @@ import React from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
 
-import { getPosts, Post } from '../api/getPosts';
+import { getPosts, PostWithTranslations } from '../api/getPosts';
 import { NavbarLayout } from '../components/NavbarLayout';
 import { PreviewCard } from '../components/PreviewCard';
 import { toDisplayDate } from '../util/dateUtil';
 
-const Blog: NextPage<{ posts: Array<Post> }> = ({ posts }) => {
-  return (
-    <NavbarLayout>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-2">
-        {posts.map((p, i) => (
+const Blog: NextPage<{ posts: PostWithTranslations[] }> = ({ posts }) => (
+  <NavbarLayout>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-2">
+      {posts?.map((p, i) => {
+        return (
           <PreviewCard
             title={p.title}
             description={p.description}
@@ -21,11 +21,11 @@ const Blog: NextPage<{ posts: Array<Post> }> = ({ posts }) => {
             date={toDisplayDate(p.created_at ?? '')}
             key={i}
           />
-        ))}
-      </div>
-    </NavbarLayout>
-  );
-};
+        );
+      })}
+    </div>
+  </NavbarLayout>
+);
 
 export default Blog;
 

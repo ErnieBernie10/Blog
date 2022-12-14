@@ -22,6 +22,7 @@ export interface Database {
           slug: string;
           description: string;
           preview_image: string | null;
+          post_nl: number | null;
         };
         Insert: {
           id?: number;
@@ -35,6 +36,7 @@ export interface Database {
           slug: string;
           description: string;
           preview_image?: string | null;
+          post_nl?: number | null;
         };
         Update: {
           id?: number;
@@ -46,6 +48,39 @@ export interface Database {
           author_id?: string;
           tags?: string[] | null;
           slug?: string;
+          description?: string;
+          preview_image?: string | null;
+          post_nl?: number | null;
+        };
+      };
+      posts_nl: {
+        Row: {
+          id: number;
+          title: string | null;
+          created_at: string | null;
+          updated_at: string | null;
+          content: string;
+          status: Database['public']['Enums']['status'];
+          description: string;
+          preview_image: string | null;
+        };
+        Insert: {
+          id?: number;
+          title?: string | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+          content: string;
+          status?: Database['public']['Enums']['status'];
+          description: string;
+          preview_image?: string | null;
+        };
+        Update: {
+          id?: number;
+          title?: string | null;
+          created_at?: string | null;
+          updated_at?: string | null;
+          content?: string;
+          status?: Database['public']['Enums']['status'];
           description?: string;
           preview_image?: string | null;
         };

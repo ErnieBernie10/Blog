@@ -15,6 +15,7 @@ export const StyledReactMarkdown: React.FC<ReactMarkdownOptions> = ({
         h2: withClassNames('mb-4 text-3xl text-gray-800 dark:text-gray-500'),
         p: withClassNames('mb-4 text-justify'),
         img: withClassNames('rounded-lg max-h-[800px]'),
+        ul: withClassNames('list-disc ml-8 mb-4'),
       }}
     >
       {children}

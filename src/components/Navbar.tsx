@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Flag from 'react-flagkit';
 
 import styles from '../styles/Nav.module.css';
-import { ActionButton } from './common/ActionButton';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
@@ -86,15 +84,15 @@ export const Navbar: React.FC = () => {
             </li>
           </ul>
           <div className="flex max-lg:justify-between justify-end w-full">
-            <Link
-              className="block"
-              href={router.basePath}
-              locale={router.locale === 'nl' ? false : 'nl'}
-            >
-              <ActionButton>
-                <Flag country={router.locale === 'nl' ? 'GB' : 'BE'} />
-              </ActionButton>
-            </Link>
+            {/* <Link */}
+            {/*  className="block" */}
+            {/*  href={router.asPath} */}
+            {/*  locale={router.locale === 'nl' ? false : 'nl'} */}
+            {/* > */}
+            {/*  <ActionButton> */}
+            {/*    <Flag country={router.locale === 'nl' ? 'BE' : 'GB'} /> */}
+            {/*  </ActionButton> */}
+            {/* </Link> */}
             <ThemeToggle />
           </div>
         </div>
